@@ -1,5 +1,3 @@
-// convert color picker game to composable
-
 import { ref } from "vue/reactivity";
 
 export default function useColorPicker() {
@@ -9,12 +7,10 @@ export default function useColorPicker() {
   const matchColor = (value) => {
     let randomColor = colors[Math.floor(Math.random() * colors.length)];
     if (value === randomColor) {
-      message.value = `correct...[response: ${colors[randomColor]}]`;
+      message.value = `correct...[response: ${randomColor}]`;
       return;
     }
-    message.value = `wrong...[response: ${colors[randomColor]}]`;
+    message.value = `wrong...[response: ${randomColor}]`;
   };
   return { colors, message, matchColor };
-}
-
 }
